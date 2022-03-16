@@ -1,10 +1,9 @@
-
-from qrbar import QrBar
-from language import LanguageDetect
+from qrbar.qrbar import QrBar
+from language.language import LanguageDetect
 from directory import Directory
 from textrecognition import TextRecognition
-from scanner import Scanner, get_contour
-from interacter import interactive_get_contour
+from scanner.scanner import Scanner, get_contour
+from interacter.interacter import interactive_get_contour
 
 import argparse
 import os
@@ -35,9 +34,9 @@ def single_file_handler(
         if lang:
             if not text_img:
                 text_img = TextRecognition.recognition(new_img)
-                json_file["lang"] = lang_img
             detect = LanguageDetect()
             lang_img = detect.predict(text_img)
+            json_file["lang"] = lang_img
             filename = f"{lang_img}_{filename}"
         if qr:
             try:
@@ -78,15 +77,11 @@ def directory_handler(path, text=False, qr=False, lang=False):
 
 
 def main():
-    
+
     ap = argparse.ArgumentParser()
     group = ap.add_mutually_exclusive_group(required=True)
-    group.add_argument(
-        "--images", help="Directory of images to be scanned"
-    )
-    group.add_argument(
-        "--image", help="Path to single image to be scanned"
-    )
+    group.add_argument("--images", help="Directory of images to be scanned")
+    group.add_argument("--image", help="Path to single image to be scanned")
     ap.add_argument("-i", action="store_true", help="Check if Language")
     ap.add_argument("-t", action="store_true", help="Check if Language")
     ap.add_argument("-l", action="store_true", help="Check if Language")
@@ -99,7 +94,7 @@ def main():
     lang = args["l"]
     qr = args["q"]
     interactive = args["i"]
-   
+
     if interactive and img_dir:
         print("Interective mode only possible with one image")
     if img_dir:
