@@ -1,6 +1,7 @@
 from pyzbar.pyzbar import decode
+import sys
+import os
 
-import sys, os
 
 # Disable
 def blockPrint():
@@ -20,5 +21,6 @@ class QrBar:
                 for barcode in decode(img):
                     data = barcode.data.decode("utf-8")
                     return data
-        except AssertionError as e:
+        except AssertionError:
+            print(AssertionError)
             return None
