@@ -82,10 +82,10 @@ def main():
     group = ap.add_mutually_exclusive_group(required=True)
     group.add_argument("--images", help="Directory of images to be scanned")
     group.add_argument("--image", help="Path to single image to be scanned")
-    ap.add_argument("-i", action="store_true", help="Check if Language")
-    ap.add_argument("-t", action="store_true", help="Check if Language")
-    ap.add_argument("-l", action="store_true", help="Check if Language")
-    ap.add_argument("-q", action="store_true", help="Check if Language")
+    ap.add_argument("-i", action="store_true", help="Interactive mode")
+    ap.add_argument("-t", action="store_true", help="Text recognition")
+    ap.add_argument("-l", action="store_true", help="language classification")
+    ap.add_argument("-q", action="store_true", help="Check if image contains QR code")
 
     args = vars(ap.parse_args())
     img_dir = args["images"]
