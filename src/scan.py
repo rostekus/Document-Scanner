@@ -1,7 +1,7 @@
 from qrbar.qrbar import QrBar
 from language.language import LanguageDetect
 from directory import Directory
-from textrecognition import TextRecognition
+from textrecognition.textrecognition import TextRecognition
 from scanner.scanner import Scanner, get_contour
 from interacter.interacter import interactive_get_contour
 
@@ -106,6 +106,7 @@ def main():
     try:
         img = cv2.imread(img_path)
         contour = get_contour(img)
+        print(contour)
 
     except:
         print("Cant open file {img_path}")
