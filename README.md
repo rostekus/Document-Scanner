@@ -1,6 +1,6 @@
 # Document-Scanner
 
- Docoument Scanner written in Python, mostly using cv2 library. The scanner takes a poorly scanned image, finds the corners of the document, applies the perspective transformation to get a top-down view of the document.
+ Document Scanner written in Python, mostly using cv2 library. The scanner takes a poorly scanned image, finds the corners of the document, applies the perspective transformation to get a top-down view of the document.
  ## Description
  What i had in my mind was the idea that i don't want to create another simple Document Scanner, so I asked myself what features I can add to make this project more interesting and more challeching.
  I came up with several concepts which later I implemented.
@@ -10,7 +10,7 @@
  - QR code Scanner 
  - interactive as also automatic selection of documents
 
- Supported Languages: German, English, French, Italian, Portuguese and Spanish. NN correctly detects the languegage of the text 97% of the time. Check `/src/language/langNN.ipynb` for more information.
+ Supported Languages: German, English, French, Italian, Portuguese and Spanish. NN correctly detects the language of the text 97% of the time. Check `/src/language/langNN.ipynb` for more information.
 
  The UI code for the interactive mode is adapted from `interacrer.py` from matplotlib [page](https://matplotlib.org/examples/event_handling/poly_editor.html).
 
