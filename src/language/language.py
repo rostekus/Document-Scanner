@@ -6,10 +6,10 @@ import numpy as np
 class LanguageDetect:
     def __init__(self):
         self.model = keras.models.load_model(
-            "/Users/rostyslavmosorov/Desktop/projekty/receipt-scanner/src/data/langNN.h5"
+            "/src/data/langNN.h5"
         )
         self.vect = joblib.load(
-            "/Users/rostyslavmosorov/Desktop/projekty/receipt-scanner/src/data/vectorizer.joblib"
+            "/src/data/vectorizer.joblib"
         )
         self.lang = ["deu", "eng", "fra", "ita", "por", "spa"]
 
