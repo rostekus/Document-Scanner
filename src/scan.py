@@ -15,7 +15,6 @@ def single_file_handler(
     path, text=False, qr=False, lang=False, contour=None, dir=None
 ):
     json_file = {}
-    print(path)
     (dirname, filename) = os.path.split(path)
     if dir:
         dirname = dir
@@ -82,10 +81,10 @@ def main():
     group = ap.add_mutually_exclusive_group(required=True)
     group.add_argument("--images", help="Directory of images to be scanned")
     group.add_argument("--image", help="Path to single image to be scanned")
-    ap.add_argument("-i", action="store_true", help="Check if Language")
-    ap.add_argument("-t", action="store_true", help="Check if Language")
-    ap.add_argument("-l", action="store_true", help="Check if Language")
-    ap.add_argument("-q", action="store_true", help="Check if Language")
+    ap.add_argument("-i", action="store_true", help="Interactive Mode")
+    ap.add_argument("-t", action="store_true", help="Text scanner")
+    ap.add_argument("-l", action="store_true", help="Leanguage Recognition")
+    ap.add_argument("-q", action="store_true", help="QR Code")
 
     args = vars(ap.parse_args())
     img_dir = args["images"]
@@ -106,14 +105,12 @@ def main():
     try:
         img = cv2.imread(img_path)
         contour = get_contour(img)
-        print(contour)
 
     except:
         print("Cant open file {img_path}")
         return
     if interactive:
         flags, contour = interactive_get_contour(contour, img)
-        print(flags)
         text = flags["text"]
         qr = flags["qr"]
         lang = flags["lang"]
