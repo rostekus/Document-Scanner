@@ -1,7 +1,5 @@
 # Document-Scanner
 
- # Document Scanner
-
  Docoument Scanner written in Python, mostly using cv2 library. The scanner takes a poorly scanned image, finds the corners of the document, applies the perspective transformation to get a top-down view of the document.
  ## Description
  What i had in my mind was the idea that i don't want to create another simple Document Scanner, so I asked myself what features I can add to make this project more interesting and more challeching.
