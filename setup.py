@@ -9,7 +9,7 @@ setup(
     author_email='rmosorov@icloud.com',
     license='MIT License',
     url='https://github.com/rostekus/Document-Scanner',
-    packages=find_packages(where='src'),
-    package_dir={'': 'src'}
+    packages=find_packages(where='scanner'),
+    package_dir={'': 'scanner'}
 
 )
