@@ -18,7 +18,7 @@
 
  ## Usage
  ```
- python scan.py (--images <IMG_DIR> | --image <IMG_PATH>) [-i] [-t] [-l] [-q] 
+ python scanner (--images <IMG_DIR> | --image <IMG_PATH>) [-i] [-t] [-l] [-q] 
  ```
  * The `-i` flag enables interactive mode, where you will be prompted to click and drag the corners of the document. For example, to scan a single image with interactive mode enabled
  * The `-t` flag enables the text scanner, if text is found it is saves to txt file
